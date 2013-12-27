@@ -23,6 +23,8 @@ def compress(inFn, channels):
             for meta in soup.find_all(u"meta-data"):
                 if unicode(meta).find(u"UMENG_CHANNEL") != -1:
                     meta["android:value"] = channel;
+                if unicode(meta).find(u"PLAYDATA_CHANNEL") != -1:
+                    meta["android:value"] = channel;
 
             vname = soup.find(u'manifest')['android:versionName']
             print 'vname', vname

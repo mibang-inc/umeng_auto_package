@@ -1,2 +1,8 @@
 release/*
 test_data/*
+
+*.zip
+
+.DS_Store
+
+*.apk
