@@ -10,3 +10,7 @@ test_data/*
 *.pyc
 
 tools/apktool/aapt
+
+*.pyc
+
+package.pyc
