@@ -6,3 +6,7 @@ test_data/*
 .DS_Store
 
 *.apk
+
+*.pyc
+
+tools/apktool/aapt
