@@ -25,6 +25,8 @@ def compress(inFn, channels):
                     meta["android:value"] = channel;
                 if unicode(meta).find(u"PLAYDATA_CHANNEL") != -1:
                     meta["android:value"] = channel;
+                if unicode(meta).find(u"Channel ID") != -1:
+                    meta["android:value"] = channel;
 
             vname = soup.find(u'manifest')['android:versionName']
             print 'vname', vname
@@ -43,4 +45,4 @@ def compress(inFn, channels):
 
         jarSignCmd = "java -jar tools/SignApk.jar ";
         os.system(jarSignCmd + " meishixing.keystore meishigo meishixing meishigo %s/unsign-a.apk %s/%s-%s-%s.apk" % (TEST_DIR, RELEASE_DIR, pname, channel.encode("utf-8"), vname));
-
+    os.system("zip %s/all_crazysight_%s.zip %s/*.apk" % (RELEASE_DIR,vname,RELEASE_DIR));
